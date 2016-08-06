@@ -1,0 +1,6 @@
+<% if user != current_user %>
+  <h5><%= link_to user.username, "/user/#{user.username}" %></h5>
+  <h5><%= link_to "Add #{user.username}", friendships_path(:friend_id => user), :method => :post unless current_user.friends.include?(user) %></h5>
+<% else %>
+  <%= ["Hello", "Howdy", "Hey"].sample %>, <%= user.username %>
+<% end %>
