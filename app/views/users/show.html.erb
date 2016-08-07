@@ -1,5 +1,20 @@
 <%= render @user %>
 
+<h2>Tasks</h2>
+<ul>
+  <% @user.tasks.each do |task| %>
+    Task: <%= link_to task.name, task %><br>
+    Points: <%= task.points %><br><br>
+  <% end %>
+</ul>
+
+<h2>Chatrooms</h2>
+<ul>
+  <% for chatroom in @user.chatrooms %>
+    <li><%= link_to chatroom.name, chatroom %>
+  <% end %>
+</ul>
+
 <h2>Friends</h2>
 <ul>
   <% for friendship in @user.friendships %>
@@ -16,13 +31,5 @@
 <ul>
   <% for user in @user.inverse_friends %>
     <li><%= user.username %></li>
-  <% end %>
-</ul>
-
-
-<h2>Chatrooms</h2>
-<ul>
-  <% for chatroom in @user.chatrooms %>
-    <li><%= link_to chatroom.name, chatroom %>
   <% end %>
 </ul>

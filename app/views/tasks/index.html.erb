@@ -1,0 +1,7 @@
+<% unless  @tasks.empty? %>
+  <h2>All Tasks</h2>
+  <%= render @tasks %>
+<% end %>
+
+<h3>New Task</h3>
+<%= render 'form' %>

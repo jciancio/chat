@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :tasks
+
   resources :friendships
+
   resources :chatrooms do
     resource :chatroom_users
     resources :messages
